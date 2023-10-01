@@ -39,45 +39,21 @@
 				heapifyUp(parentIndex);
 			}
 		}
-		 void heapifyDown(int index) {
-        int leftChild = 2 * index + 1;
-        int rightChild = 2 * index + 2;
-        int largest = index;
+		void heapifyDown(int index) {
+	        int leftChild = 2 * index + 1;
+	        int rightChild = 2 * index + 2;
+	        int largest = index;
 
-        if (leftChild < heap.size() && heap[leftChild] > heap[largest]) {
-            largest = leftChild;
-        }
+	        if (leftChild < heap.size() && heap[leftChild] > heap[largest])largest = leftChild;
 
-        if (rightChild < heap.size() && heap[rightChild] > heap[largest]) {
-            largest = rightChild;
-        }
+	        if (rightChild < heap.size() && heap[rightChild] > heap[largest])
+	            largest = rightChild;
 
-        if (largest != index) {
-            std::swap(heap[index], heap[largest]);
-            heapifyDown(largest);
-        }
-    }
-		// void heapifyDown(int index){
+	        if (largest == index) return;
 
-		// 	const int size = heap.size();
-		// 	while(true){
-
-		// 		if(index >= size) break;
-
-		// 		int leftChildIndex = 2 * index + 1;
-		// 		int rightChildIndex = 2 * index + 2;
-
-		// 		if(leftChildIndex < size and   heap[leftChildIndex] > heap[rightChildIndex]){
-		// 			swap(leftChildIndex,index);
-		// 			index = leftChildIndex;
-
-		// 		} else if(rightChildIndex < size ){
-		// 			swap(rightChildIndex,index);
-		// 			index = rightChildIndex;
-		// 		}
-		// 		else break;
-		// 	}
-		// }
+	        swap(heap[index], heap[largest]);
+	        heapifyDown(largest);
+   		}
 
 	public:
 		MaxHeap(){ }
@@ -118,7 +94,7 @@
 
 		heap.pop();
 		// heap.pop();
-	
+
 		cout << heap.top() << endl;
 	}
 

@@ -18,7 +18,7 @@ void solve(int n,int m)
 
 int main()
 { 
-    fastread;
+    fastread
     #ifndef ONLINEJUDGE
        clock_t tStart = clock();
        freopen("input.txt","r",stdin); //can need to change file . this one for taking input
